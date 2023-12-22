@@ -1,4 +1,4 @@
-# Customer Management Application 
+# Customer Management Application [Frontend]
 Tech Stack:
 1. Angular CLI 12
 2. HTML
