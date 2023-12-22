@@ -20,5 +20,13 @@ export class CustomerService {
     return this.httpClient.post<Customer>(`${this.baseURL}`, customer);
   }
 
+  getCustomerById(customerId: number): Observable<Customer>{
+    return this.httpClient.get<Customer>(`${this.baseURL}/${customerId}`);
+  }
+
+  updateCustomer(customerId: number, customer: Customer): Observable<Customer>{
+    return this.httpClient.put<Customer>(`${this.baseURL}/${customerId}`, customer);
+  }
+
 
 }

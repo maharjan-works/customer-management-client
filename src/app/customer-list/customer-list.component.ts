@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from '../customer';
 import { CustomerService } from '../customer.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-customer-list',
@@ -9,18 +10,23 @@ import { CustomerService } from '../customer.service';
 })
 export class CustomerListComponent implements OnInit {
 
-  customers: Customer[] = [];
+  customer_list: Customer[] = [];
 
-  constructor(private customerService: CustomerService) { }
+  constructor(private customerService: CustomerService,
+    private router: Router) { }
 
   ngOnInit(): void {
-    this.getCustomers();
+    this.getCustomerList();
   }
 
-  private getCustomers(){
+  private getCustomerList(){
     this.customerService.getCustomerList().subscribe(data => {
-      this.customers = data;
+      this.customer_list = data;
     });
+  }
+
+  updateCustomer(customerId: number){
+    this.router.navigate([`update-customer`,customerId]);
   }
 
 }

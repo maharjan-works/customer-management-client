@@ -8,6 +8,7 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import { CreateCustomerComponent } from './create-customer/create-customer.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { UpdateCustomerComponent } from './update-customer/update-customer.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { HomeComponent } from './home/home.component';
     AppComponent,
     CustomerListComponent,
     CreateCustomerComponent,
-    HomeComponent
+    HomeComponent,
+    UpdateCustomerComponent
   ],
   imports: [
     BrowserModule,
