@@ -1,4 +1,5 @@
 <h4>Customer List</h4>
+<span>{{message}}</span>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -6,7 +7,7 @@
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
-            <th>Action</th>
+            <th colspan="3" style="text-align: center;">Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -17,6 +18,12 @@
             <td>{{customer.email}}</td>
             <td>
                 <button (click)="updateCustomer(customer.customerId)" class = "btn btn-info">UPDATE</button>
+            </td>
+            <td>
+                <button (click)="deleteCustomeer(customer.customerId)" class = "btn btn-danger">DELETE</button>
+            </td>
+            <td>
+                <button (click)="viewCustomer(customer.customerId)" class ="btn btn-secondary">VIEW</button>
             </td>
         </tr> 
     </tbody>

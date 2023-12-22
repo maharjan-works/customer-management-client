@@ -28,7 +28,7 @@ export class CreateCustomerComponent implements OnInit {
   }
 
  private routeCustomerList(){
-    this.router.navigate(['/customers']);
+    this.router.navigate(['/customer-list']);
   }
 
 }

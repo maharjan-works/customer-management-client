@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class CustomerListComponent implements OnInit {
 
   customer_list: Customer[] = [];
+  message: Object ='';
 
   constructor(private customerService: CustomerService,
     private router: Router) { }
@@ -27,6 +28,18 @@ export class CustomerListComponent implements OnInit {
 
   updateCustomer(customerId: number){
     this.router.navigate([`update-customer`,customerId]);
+  }
+
+  deleteCustomeer(customerId: number){
+    this.customerService.deleteCustomer(customerId).subscribe(data =>{
+      this.message = "the record deleted succesfully";
+      console.log(data);
+      this.getCustomerList();
+    })
+  }
+
+  viewCustomer(customerId: number){
+    this.router.navigate([`view-customer`,customerId]);
   }
 
 }
